@@ -1,0 +1,148 @@
+{
+  "environment": {
+    "python_version": "3.12.7 (tags/v3.12.7:0b05ead, Oct  1 2024, 03:06:41) [MSC v.1941 64 bit (AMD64)]",
+    "torch_version": "2.12.0+cpu",
+    "cuda_available": false,
+    "cuda_version": null,
+    "gpu_name": null,
+    "transformers_version": "5.12.1",
+    "pennylane_version": "0.36.0",
+    "sklearn_version": "1.9.0",
+    "numpy_version": "1.26.4"
+  },
+  "embedding_extraction_time_seconds": 0.01,
+  "experiment_times": {
+    "PCA_d8": 14.7,
+    "AE_d8": 68.53,
+    "PQC_d8": 539.3
+  },
+  "results": [
+    {
+      "method": "PCA",
+      "d_out": 8,
+      "accuracy": 0.7088,
+      "macro_f1": 0.5951,
+      "projection_params": 0,
+      "time_seconds": 14.7,
+      "classification_report": {
+        "negative": {
+          "precision": 0.8306519898391194,
+          "recall": 0.6962384669978708,
+          "f1-score": 0.7575289575289575,
+          "support": 1409.0
+        },
+        "neutral": {
+          "precision": 0.13716814159292035,
+          "recall": 0.5568862275449101,
+          "f1-score": 0.22011834319526627,
+          "support": 167.0
+        },
+        "positive": {
+          "precision": 0.8951798010711554,
+          "recall": 0.7358490566037735,
+          "f1-score": 0.8077321366931308,
+          "support": 1590.0
+        },
+        "accuracy": 0.7087807959570436,
+        "macro avg": {
+          "precision": 0.620999977501065,
+          "recall": 0.6629912503821848,
+          "f1-score": 0.5951264791391182,
+          "support": 3166.0
+        },
+        "weighted avg": {
+          "precision": 0.8264787166874523,
+          "recall": 0.7087807959570436,
+          "f1-score": 0.7543942393600723,
+          "support": 3166.0
+        }
+      }
+    },
+    {
+      "method": "Autoencoder",
+      "d_out": 8,
+      "accuracy": 0.9071,
+      "macro_f1": 0.7673,
+      "projection_params": 198920,
+      "time_seconds": 68.53,
+      "classification_report": {
+        "negative": {
+          "precision": 0.92524682651622,
+          "recall": 0.9311568488289567,
+          "f1-score": 0.9281924301379554,
+          "support": 1409.0
+        },
+        "neutral": {
+          "precision": 0.4788732394366197,
+          "recall": 0.40718562874251496,
+          "f1-score": 0.4401294498381877,
+          "support": 167.0
+        },
+        "positive": {
+          "precision": 0.9290161892901619,
+          "recall": 0.9383647798742139,
+          "f1-score": 0.9336670838548186,
+          "support": 1590.0
+        },
+        "accuracy": 0.9071383449147189,
+        "macro avg": {
+          "precision": 0.7777120850810005,
+          "recall": 0.7589024191485617,
+          "f1-score": 0.7673296546103204,
+          "support": 3166.0
+        },
+        "weighted avg": {
+          "precision": 0.9035945516483345,
+          "recall": 0.9071383449147189,
+          "f1-score": 0.9051975412244215,
+          "support": 3166.0
+        }
+      }
+    },
+    {
+      "method": "PQC",
+      "d_out": 8,
+      "accuracy": 0.445,
+      "macro_f1": 0.2053,
+      "projection_params": 6184,
+      "time_seconds": 539.3,
+      "classification_report": {
+        "negative": {
+          "precision": 0.44504106127605814,
+          "recall": 1.0,
+          "f1-score": 0.6159562841530055,
+          "support": 1409.0
+        },
+        "neutral": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 167.0
+        },
+        "positive": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1590.0
+        },
+        "accuracy": 0.44504106127605814,
+        "macro avg": {
+          "precision": 0.14834702042535272,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.20531876138433516,
+          "support": 3166.0
+        },
+        "weighted avg": {
+          "precision": 0.19806154622172015,
+          "recall": 0.44504106127605814,
+          "f1-score": 0.2741258383991108,
+          "support": 3166.0
+        }
+      }
+    }
+  ],
+  "anomalies": [
+    "PQC gradient stagnation: val_loss did not improve for 5 consecutive epochs (epochs 6-10). Possible vanishing gradient through quantum circuit.",
+    "PQC gradient stagnation: val_loss did not improve for 5 consecutive epochs (epochs 16-20). Possible vanishing gradient through quantum circuit."
+  ]
+}
