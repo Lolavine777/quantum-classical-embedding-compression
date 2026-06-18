@@ -19,6 +19,7 @@ LABEL_NAMES = ["negative", "neutral", "positive"]
 
 # Compression dimension
 D_OUT = 8
+D_OUT_LIST = [8, 16, 32, 64]  # For multi-dimension ablation study
 
 # PQC
 N_QUBITS = 8
